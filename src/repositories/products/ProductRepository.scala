@@ -1,6 +1,8 @@
-package repositories
-import entities.IProduct
-import entities.Product
+package repositories.products
+
+import entities.product.{IProduct, Product}
+
+import java.time.LocalDateTime
 
 class ProductRepository extends IProductRepository {
   private var products: Vector[IProduct] = Vector()
@@ -10,7 +12,9 @@ class ProductRepository extends IProductRepository {
   override def create(name: String, description: String, price: Float): IProduct = {
     def uuid = java.util.UUID.randomUUID.toString;
 
-    val newProduct = new Product(uuid, name, description, price);
+    val createdAt = LocalDateTime.now();
+
+    val newProduct = new Product(uuid, name, description, price, createdAt);
 
     this.products = this.products :+ newProduct
 
