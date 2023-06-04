@@ -1,7 +1,6 @@
 // Eliel Michelmann Gaspar R.A 740294
 // Niccolas Cente R.A 740266
 
-import providers.ValidateEmailProvider
 import repositories.products.ProductRepository
 import repositories.users.UserRepository
 
